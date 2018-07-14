@@ -1,0 +1,15 @@
+{
+	"wow_path":"G:/World of Warcraft",
+	"ui_urls":[
+		"https://wow.curseforge.com/projects/hekili",
+		"https://wow.curseforge.com/projects/kuinameplates",
+		"https://wow.curseforge.com/projects/o-item-level",
+		"https://wow.curseforge.com/projects/nugie-combo-bar",
+		"https://wow.curseforge.com/projects/details",
+		"https://wow.curseforge.com/projects/tellmewhen",
+		"https://wow.curseforge.com/projects/deadly-boss-mods",
+		"https://wow.curseforge.com/projects/dbm-voicepack-yike"
+	]
+}
+
+

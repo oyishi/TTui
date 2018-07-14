@@ -1,0 +1,19 @@
+{
+  "name": "ttui",
+  "version": "1.0.0",
+  "description": "wowui upgrader",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "oyishi",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "follow-redirects": "^1.5.1",
+    "node-zip": "^1.1.1",
+    "progress": "^2.0.0",
+    "request": "^2.87.0",
+    "unzip": "^0.1.11"
+  }
+}
