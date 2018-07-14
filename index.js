@@ -260,4 +260,4 @@ function main(){
 }
 
 main();
-console.log("欢迎使用ttui");
+console.log("欢迎使用TTui");
