@@ -10,12 +10,12 @@
 
 ### 使用说明：
 1.安装NODEJS，http://nodejs.cn/download/  
-2.下载本项目，并修改项目中的“请配置这里.txt”文件。  
+2.下载本项目 点击下载 https://github.com/oyishi/TTui/archive/master.zip ，并修改项目中的“请配置这里.txt”文件。  
 
 |字段|说明|
 |----|-----|
-|wow_path|为魔兽世界安装路径，尽量使用英文路径。|
-|ui_urls|为单体插件在curseforge上的网址，你可以通过 https://wow.curseforge.com/addons 来查询自己想要的插件，并把该插件的网址录入ui_urls。|   
+|wow_path|魔兽世界安装路径，尽量使用英文路径。|
+|ui_urls|单体插件在curseforge上的网址，你可以通过 https://wow.curseforge.com/addons 来查询自己想要的插件，并把该插件的网址录入ui_urls。|   
     
 3.双击start.bat开始运行脚本。  
 4.等待脚本下载并安装插件。  
