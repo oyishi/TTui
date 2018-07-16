@@ -9,7 +9,7 @@
   本脚本是本人快速的不负责任地编写而成，使用者需要一定的编程基础，以及和本人的灵魂共鸣。
 
 ### 使用说明：
-1.安装NODEJS，http://nodejs.cn/download/   windows用户请选择.msi安装包。
+1.安装NODEJS，http://nodejs.cn/download/   windows用户请选择.msi安装包。  
 2.下载本项目 点击下载 https://github.com/oyishi/TTui/archive/master.zip ，并修改项目中的“请配置这里.txt”文件。  
 
 |字段|说明|
