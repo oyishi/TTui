@@ -26,18 +26,29 @@ function loadConfig(cb){
 	fs.readFile('请配置这里.txt',{encoding: 'utf8'}, function(err, data){
     if(err) console.log('文件读取发生错误');
 	    else {;
-	       var test = data.toString();
-	       json = JSON.parse(test);
+	       	var test = data.toString();
+	      	// json = JSON.parse(test);
+	      	// console.log(test);
+	      	var json = test.split("\r\n");
+	      	// console.log(json);
 
-	       wow_path =  json.wow_path;
-	       for(i = 0 ; i < json.ui_urls.length; i++){
-	       		page_arr.push({url:json.ui_urls[i]});
-	       }
-	       // console.log(wow_path);
-	       // console.log(page_arr);
-	       if(cb){
-	       	cb();
-	       }
+		    for (i = 0 ; i < json.length ;i++) {
+		      	if(i == 0){
+		      		wow_path =  json[0];
+		      	}else{
+		      		if(json[i].indexOf("https")>=0){
+		      			page_arr.push({url:json[i]});
+		      		}
+		      	}
+		    }
+		    // console.log(page_arr);
+	        // wow_path =  json.wow_path;
+	        // for(i = 0 ; i < json.ui_urls.length; i++){
+	        // 		page_arr.push({url:json.ui_urls[i]});
+	        // }
+	        if(cb){
+	       		cb();
+	        }
 	      
 	    }
 	});
@@ -47,13 +58,18 @@ function loadSavedInfo(cb){
 	fs.readFile('savedInfo.js',{encoding: 'utf8'}, function(err, data){
     if(err) console.log('文件读取发生错误');
 	    else {;
-	       var test = data.toString();
-	       json = JSON.parse(test);
-	       // console.log(json);
-	       saved_info = json;
-	       if(cb){
-	       	cb();
-	       }
+	        var test = data.toString();
+	        if(test == ""){
+	        	saved_info = [];
+	        }else{
+	        	json = JSON.parse(test);
+		        // console.log(json);
+		        saved_info = json;
+	        }
+	       
+	        if(cb){
+	       		cb();
+	        }
 	      
 	    }
 	});
