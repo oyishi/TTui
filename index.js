@@ -19,6 +19,10 @@ var page_arr = [];
 // ]
 
 
+
+
+
+
 var saved_info = [];
 
 
@@ -129,6 +133,7 @@ function download(id,title,url,cb){
 
 function getPage(url,cb){
 	// const url = "https://wow.curseforge.com/projects/hekili?gameCategorySlug=addons&projectID=69254" 
+	var full_url = url;
 	https.get(url,(res)=>{
 	    var html = ""
 	    res.on("data",(data)=>{
@@ -139,7 +144,12 @@ function getPage(url,cb){
 
 	    	$ = cheerio.load(html);
 
-	    	var url = "https://wow.curseforge.com" + $('.fa-icon-download').attr('href');
+	    	var ex_url = "https://wow.curseforge.com";
+
+	    	if(full_url.indexOf("wowace") >= 0){
+	    		ex_url = "https://www.wowace.com";
+	    	}
+	    	var url = ex_url + $('.fa-icon-download').attr('href');
 	        // console.log(url);
 	        var version = $('.tip.standard-date.standard-datetime').eq(1).attr('data-epoch');
 	        // console.log(version);
