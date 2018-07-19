@@ -22,7 +22,7 @@
 
 
 - 其中第一行是魔兽世界的安装路径，尽量使用英文。  
-- 从第二行开是单体插件在curseforge上的网址，你可以通过 https://wow.curseforge.com/addons 来查询自己想要的插件。  
+- 从第二行开是单体插件在curseforge上的网址，你可以通过 https://wow.curseforge.com/addons 或 https://www.wowace.com/addons 来查询自己想要的插件。  
 - 你需要多少插件，就加多少行插件的网址在这个txt文件里，不需要的插件删掉该行即可。
 
 
