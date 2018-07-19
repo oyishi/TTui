@@ -33,10 +33,12 @@ function loadConfig(cb){
 	       	var test = data.toString();
 	      	// json = JSON.parse(test);
 	      	// console.log(test);
-	      	var json = test.split("\r\n");
-	      	// console.log(json);
+	      	var json = test.split("\n");
 
+	      	
+		    // console.log(json);
 		    for (i = 0 ; i < json.length ;i++) {
+		    	json[i] = json[i].replace(/\r/g,'');
 		      	if(i == 0){
 		      		wow_path =  json[0];
 		      	}else{
