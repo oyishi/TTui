@@ -36,9 +36,9 @@
 
 
 ### MAC用户使用说明：
-1.由于MAC系统权限的问题，没办法给出windows用户那种start.bat一键运行的入口。所以MAC用户需要会使用“终端”。
-2.安装NODEJS，http://nodejs.cn/download/ 选择 Mac 系统 (.pkg)，并安装。
-3.下载本项目 点击下载 https://github.com/oyishi/TTui/archive/master.zip ，并修改项目中的“请配置这里.txt”文件。 
-4.具体配置同上
-5.打开“终端”，进入到TTui所在目录，输入 "node index.js"，即可开始执行下载更新。
+1.由于MAC系统权限的问题，没办法给出windows用户那种start.bat一键运行的入口。所以MAC用户需要会使用“终端”。  
+2.安装NODEJS，http://nodejs.cn/download/ 选择 Mac 系统 (.pkg)，并安装。  
+3.下载本项目 点击下载 https://github.com/oyishi/TTui/archive/master.zip ，并修改项目中的“请配置这里.txt”文件。   
+4.具体配置同上。  
+5.打开“终端”，进入到TTui所在目录，输入 "node index.js"，即可开始执行下载更新。  
 
