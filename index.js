@@ -200,8 +200,10 @@ function checkNeedUpdate(json){
 	}else{
 		need_update = 1;
 	}
-	if(the_ui.need_update == 1){
+	if(the_ui){
+	    if(the_ui.need_update == 1){
 		need_update = 1;
+	    }
 	}
 	console.log(json.name + ":" + (need_update == 1 ? " 需要更新" :" 已是最新" ));
 	return need_update;
