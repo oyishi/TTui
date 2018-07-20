@@ -200,6 +200,9 @@ function checkNeedUpdate(json){
 	}else{
 		need_update = 1;
 	}
+	if(the_ui.need_update == 1){
+		need_update = 1;
+	}
 	console.log(json.name + ":" + (need_update == 1 ? " 需要更新" :" 已是最新" ));
 	return need_update;
 }
@@ -220,7 +223,8 @@ function main(){
 	var loop2;
 	var loop3;
 	var saveInfo;
-
+	var upateOneUi;
+	var loopUpdate;
 
 	loop = function(){
 		if(page_arr_index <  page_arr.length){
@@ -228,58 +232,47 @@ function main(){
 				//console.log(json);
 				json.need_update = checkNeedUpdate(json);
 				temp_saved_info.push(json);
-				page_arr_index++;
+				page_arr_index++;	
 				loop();
 			})
 		}else{
-			// console.log("本地版本确认完毕，开始更新");
+			console.log("本地版本确认完毕，开始更新");
 			// console.log(temp_saved_info);
-			loop2();
+			loopUpdate();
 		}
 	}
 
+	upateOneUi =function(json,cb){
+		download(json.id,json.name,json.url,function(){
+			unzipFile( json.name,"temp_download/" + json.id + ".zip",function(){
+				json.need_update = 0;
+				fs.writeFile('savedInfo.js',JSON.stringify(temp_saved_info), function(err){
+			       	if(err){console.log(err)}
+			       	else {console.log(json.name + ' 更新成功！');}
+			   		if(cb){
+			   			cb();
+			   		}
+			   	})
+			});
+		});
+	}
 
-	loop2 = function(){
+	loopUpdate = function(){
 		if(temp_saved_info_index < temp_saved_info.length){
 			if(temp_saved_info[temp_saved_info_index].need_update == 1){
-				download(temp_saved_info[temp_saved_info_index].id,temp_saved_info[temp_saved_info_index].name,temp_saved_info[temp_saved_info_index].url,function(){
+				upateOneUi(temp_saved_info[temp_saved_info_index],function(){
 					temp_saved_info_index++;
-					loop2();
+					loopUpdate();
 				});
 			}else{
 				temp_saved_info_index++;
-				loop2();
+				loopUpdate();
 			}
 		}else{
-			console.log("插件下载完毕，开始解压。");
-			loop3();
+			console.log("全部插件更新完毕，老铁下次见！");
 		}
 	}
-
-	loop3 = function(){
-		if(temp_saved_info_index_for_unzip < temp_saved_info.length){
-			if(temp_saved_info[temp_saved_info_index_for_unzip].need_update == 1){
-				unzipFile( temp_saved_info[temp_saved_info_index_for_unzip].name,"temp_download/" + temp_saved_info[temp_saved_info_index_for_unzip].id + ".zip",function(){
-					temp_saved_info_index_for_unzip++;
-					loop3();
-				});
-			}else{
-				temp_saved_info_index_for_unzip++;
-				loop3();
-			}
-		}else{
-			// console.log("插件解压完毕");
-			saveInfo();
-		}
-	}
-
-	saveInfo = function(){
-		fs.writeFile('savedInfo.js',JSON.stringify(temp_saved_info), function(err){
-	       if(err){console.log(err)}
-	       else {console.log('插件更新成功！');}
-	   })
-	}
-
+	
 	loadConfig(function(){
 		loadSavedInfo(function(){
 			loop();
