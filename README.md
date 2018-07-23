@@ -41,5 +41,5 @@
 2.安装NODEJS，http://nodejs.cn/download/ 选择 Mac 系统 (.pkg)，并安装。  
 3.下载本项目 点击下载 https://github.com/oyishi/TTui/archive/master.zip ，并修改项目中的“请配置这里.txt”文件。   
 4.具体配置同上。  
-5.打开“终端”，进入到TTui所在目录，输入 "node index.js"，即可开始执行下载更新。  
+5.打开“终端”，进入到TTui所在目录，输入 "node index.js"，即可开始执行下载更新。 如果一直下载失败，可以尝试输入"sudo node index.js"来解决。 
 
