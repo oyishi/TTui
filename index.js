@@ -132,6 +132,9 @@ function download(id,title,url,cb){
 
 // download("ceshi","https://wow.curseforge.com/projects/hekili/files/latest");
 
+//20190701 test downloadurl
+//download("curse","project from curse", "https://www.curseforge.com/wow/addons/parrot2/download/2731044/file")
+//download("wowace","project from wowace", "https://www.wowace.com/projects/skada/files/latest")
 
 function getPage(url,cb){
 	// const url = "https://wow.curseforge.com/projects/hekili?gameCategorySlug=addons&projectID=69254" 
@@ -145,9 +148,39 @@ function getPage(url,cb){
 	    res.on("end",()=>{
 
 	    	$ = cheerio.load(html);
-
-	    	var ex_url = "https://wow.curseforge.com";
-
+			/*
+			20190701 curse use new rule, wowace use old rule(modify)
+			curse url:https://www.curseforge.com/wow/addons/parrot2/download/2731044/file
+			wowace url:https://www.wowace.com/projects/skada/files/latest
+			*/
+			var ex_url = "";
+			var originurl = "";
+			var url = "";
+			var version = "";
+			var id = "";
+			var name = "";
+			if(full_url.indexOf("curseforge") >= 0)	//curseforge
+			{
+				ex_url = "https://www.curseforge.com";
+				originurl = $('.button.button--icon-only.button--sidebar').attr('href');
+				url = ex_url + originurl + "/file";	
+				version = originurl.substring(originurl.lastIndexOf("/") + 1); //use real version
+				id = $('.overflow-tip.truncate').attr('data-id');
+				name = $(".font-bold.text-lg.break-all").eq(0).html();
+			}
+			else //wowace
+			{
+				ex_url = "https://www.wowace.com";
+				originurl = $('.button.alt.fa-icon-download').attr('href');
+				url = ex_url + originurl;
+				var tempurl = $('.button.tip.fa-icon-download.icon-only').eq(0).attr('href');
+				var temparray = tempurl.split("/");
+				version = temparray[temparray.length-2]; //use real version
+				id = $('.cf-details.project-details').children('li').eq(0).children('div').eq(1).text().trim();
+				name = $('.overflow-tip').eq(0).text().trim();
+			}
+			
+			/* 20190701 old rule
 	    	if(full_url.indexOf("wowace") >= 0){
 	    		ex_url = "https://www.wowace.com";
 	    	}
@@ -159,14 +192,17 @@ function getPage(url,cb){
 	        // console.log(id);
 	        var name = $(".overflow-tip").eq(0).html();
 	        // console.log(name);
-
+			*/
+			
 	        var json = {
 	        	url : url,
 	        	version :version,
 	        	id : id,
 	        	name : name
 	        };
-
+			
+			//console.log(json);
+			
 	        if(cb){
 	        	cb(json);
 	        }
