@@ -5,7 +5,7 @@ const cheerio = require('cheerio')
 const request = require('request');
 const ProgressBar = require('progress');
 const path = require('path');
-const unzip = new require('unzip');
+const unzip = new require('unzip2');
 
 var wow_path = "";
 var page_arr = [];
