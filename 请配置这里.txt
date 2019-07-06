@@ -1,7 +1,7 @@
 G:/World of Warcraft
-https://wow.curseforge.com/projects/o-item-level
-https://wow.curseforge.com/projects/details
-https://wow.curseforge.com/projects/tellmewhen
-https://wow.curseforge.com/projects/deadly-boss-mods
-https://wow.curseforge.com/projects/dbm-voicepack-yike
+https://www.curseforge.com/wow/addons/o-item-level
+https://www.curseforge.com/wow/addons/details
+https://www.curseforge.com/wow/addons/tellmewhen
+https://www.curseforge.com/wow/addons/deadly-boss-mods
+https://www.curseforge.com/wow/addons/dbm-voicepack-yike
 https://www.wowace.com/projects/skada

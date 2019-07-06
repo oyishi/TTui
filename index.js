@@ -195,10 +195,10 @@ function getPage(url,cb){
 			*/
 			
 	        var json = {
-	        	url : url,
-	        	version :version,
 	        	id : id,
-	        	name : name
+	        	name : name,
+	        	url : url,
+	        	version :version
 	        };
 			
 			//console.log(json);
@@ -219,7 +219,7 @@ function getPage(url,cb){
 function findOneUIbyName(name){
 	var the_ui = null;
 	for (var i = 0 ; i < saved_info.length;i++) {
-		if(saved_info[i].name == name){
+		if(saved_info[i].id == name){
 			the_ui = saved_info[i];
 		}
 	}
@@ -227,7 +227,7 @@ function findOneUIbyName(name){
 }
 
 function checkNeedUpdate(json){
-	var the_ui = findOneUIbyName(json.name);
+	var the_ui = findOneUIbyName(json.id);
 	var need_update = 0;
 	if(the_ui){
 		if(json.version > the_ui.version){
@@ -279,12 +279,32 @@ function main(){
 			loopUpdate();
 		}
 	}
+	
+	//update savedinfo.js, keep old saved version
+	updateSavedinfo = function(json,cb){
+		for(var i = 0; i < saved_info.length;i++){
+            if(json.id == saved_info[i].id){
+				saved_info.splice(i,1);//delete
+            }
+        }
+		var savejson = {
+	        	id : json.id,
+	        	name : json.name,
+	        	version : json.version
+				};
+		saved_info.push(savejson);//add
+		
+		if(cb){
+				cb();
+		}
+	}
 
 	upateOneUi =function(json,cb){
 		download(json.id,json.name,json.url,function(){
 			unzipFile( json.name,"temp_download/" + json.id + ".zip",function(){
-				json.need_update = 0;
-				fs.writeFile('savedInfo.js',JSON.stringify(temp_saved_info), function(err){
+				//json.need_update = 0;
+				updateSavedinfo(json); //update savedinfo, not temp_saved_info
+				fs.writeFile('savedInfo.js',JSON.stringify(saved_info), function(err){
 			       	if(err){console.log(err)}
 			       	else {console.log(json.name + ' 更新成功！');}
 			   		if(cb){
