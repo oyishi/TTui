@@ -9,9 +9,8 @@
   本脚本是本人快速不负责任地编写而成，使用者需要一定的阅读理解能力和动手能力，只要你耐心的看完会发现其实很简单！
 
 ### 使用说明：
-1.安装NODEJS，http://nodejs.cn/download/   windows用户请选择.msi安装包。
-    v10.12.0的版本安装后可以直接使用。v10.14.X及以上版本安装需要更新natives:npm install natives@1.1.6。
-2.下载本项目 点击下载 https://github.com/oyishi/TTui/archive/master.zip ，并修改项目中的“请配置这里.txt”文件。  
+1.安装NODEJS，http://nodejs.cn/download/   windows用户请选择.msi安装包。    
+2.下载本项目 点击下载 "Clone or download"->"Download Zip" ，并修改项目中的“请配置这里.txt”文件。  
 3.下面对“请配置这里.txt”进行详细的说明，下面是默认的“请配置这里.txt”内容
 
     G:/World of Warcraft
@@ -20,6 +19,7 @@
     https://www.curseforge.com/wow/addons/tellmewhen
     https://www.curseforge.com/wow/addons/deadly-boss-mods
     https://www.curseforge.com/wow/addons/dbm-voicepack-yike
+    https://www.wowace.com/projects/skada
 
 
 - 其中第一行是魔兽世界的安装路径，尽量使用英文。  
@@ -40,7 +40,7 @@
 ### MAC用户使用说明：
 1.由于MAC系统权限的问题，没办法给出windows用户那种start.bat一键运行的入口。所以MAC用户需要会使用“终端”。  
 2.安装NODEJS，http://nodejs.cn/download/ 选择 Mac 系统 (.pkg)，并安装。
-3.下载本项目 点击下载 https://github.com/oyishi/TTui/archive/master.zip ，并修改项目中的“请配置这里.txt”文件。   
+3.下载本项目 点击下载 "Clone or download"->"Download Zip" ，并修改项目中的“请配置这里.txt”文件。 
 4.具体配置同上。  
 5.打开“终端”，进入到TTui所在目录，输入 "node index.js"，即可开始执行下载更新。 如果一直下载失败，可以尝试输入"sudo node index.js"来解决。 
 
