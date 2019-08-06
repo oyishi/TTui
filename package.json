@@ -1,6 +1,6 @@
 {
   "name": "ttui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "wowui upgrader",
   "main": "index.js",
   "scripts": {

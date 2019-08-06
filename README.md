@@ -1,4 +1,4 @@
-# TTui  田田UI魔兽世界单体插件更新脚本
+# TTui  田田UI魔兽世界单体插件更新脚本 V0.2
 
 ### 简介：
   基于curse插件库的魔兽世界单体插件更新脚本，使用nodejs编写。
@@ -9,11 +9,11 @@
   本脚本是本人快速不负责任地编写而成，使用者需要一定的阅读理解能力和动手能力，只要你耐心的看完会发现其实很简单！
 
 ### 使用说明：
-1.安装NODEJS，http://nodejs.cn/download/   windows用户请选择.msi安装包。    
-2.下载本项目 点击下载 "Clone or download"->"Download Zip" ，并修改项目中的“请配置这里.txt”文件。  
-3.下面对“请配置这里.txt”进行详细的说明，下面是默认的“请配置这里.txt”内容
+1.安装NODEJS，http://nodejs.cn/download/，windows用户请选择.msi安装包。    
+2.下载本项目，点击下载 "Clone or download"->"Download Zip" ，经典怀旧版修改项目中的“经典版请配置这里.txt”文件，正常版修改项目中的“最新版请配置这里.txt”文件，
+3.下面对“最新版请配置这里.txt”进行详细的说明，下面是默认的“最新版请配置这里.txt”内容
 
-    G:/World of Warcraft
+    G:\World of Warcraft\_retail_
     https://www.curseforge.com/wow/addons/o-item-level
     https://www.curseforge.com/wow/addons/details
     https://www.curseforge.com/wow/addons/tellmewhen
@@ -22,7 +22,7 @@
     https://www.wowace.com/projects/skada
 
 
-- 其中第一行是魔兽世界的安装路径，尽量使用英文。  
+- 其中第一行是魔兽世界的安装路径，尽量使用英文。正常版本一般是"_retail_"，经典怀旧版本一般是"_classic_"
 - 从第二行开是单体插件在curseforge上的网址，你可以通过 https://www.curseforge.com/wow/addons 或 https://www.wowace.com/addons 来查询自己想要的插件。 
 - 目前配置文件只能识别 https://www.curseforge.com/wow/addons/xxxxxx 和 https://www.wowace.com/projects/xxxxxx 这种格式的网址。通过 https://www.curseforge.com/wow/addons 或 https://www.wowace.com/addons 搜索到的插件地址都满足这个要求。
 - 你需要多少插件，就加多少行插件的网址在这个txt文件里，不需要的插件删掉该行即可。
