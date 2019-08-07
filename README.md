@@ -9,7 +9,7 @@
   本脚本是本人快速不负责任地编写而成，使用者需要一定的阅读理解能力和动手能力，只要你耐心的看完会发现其实很简单！
 
 ### 使用说明：
-1.安装NODEJS，http://nodejs.cn/download/，windows用户请选择.msi安装包。    
+1.安装NODEJS，http://nodejs.cn/download/ Windows用户请选择.msi安装包。  
 2.下载本项目，点击下载 "Clone or download"->"Download Zip" ，经典怀旧版修改项目中的“经典版请配置这里.txt”文件，正常版修改项目中的“最新版请配置这里.txt”文件，
 3.下面对“最新版请配置这里.txt”进行详细的说明，下面是默认的“最新版请配置这里.txt”内容
 
@@ -26,8 +26,6 @@
 - 从第二行开是单体插件在curseforge上的网址，你可以通过 https://www.curseforge.com/wow/addons 或 https://www.wowace.com/addons 来查询自己想要的插件。 
 - 目前配置文件只能识别 https://www.curseforge.com/wow/addons/xxxxxx 和 https://www.wowace.com/projects/xxxxxx 这种格式的网址。通过 https://www.curseforge.com/wow/addons 或 https://www.wowace.com/addons 搜索到的插件地址都满足这个要求。
 - 你需要多少插件，就加多少行插件的网址在这个txt文件里，不需要的插件删掉该行即可。
-
-
     
 4.双击start.bat开始运行脚本。  
 5.等待脚本下载并安装插件。  
