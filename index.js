@@ -31,7 +31,7 @@ function loadConfig(cb){
 		      	if(i == 0){
 		      		wow_path =  json[0];
 		      	}else{
-		      		if(json[i].indexOf("https")>=0){
+		      		if(json[i].indexOf("https")>=0 && json[i].indexOf("#")<0){
 		      			page_arr.push({url:json[i]});
 		      		}
 		      	}
